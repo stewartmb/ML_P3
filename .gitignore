@@ -1,0 +1,28 @@
+# Archivos de configuración del IDE
+.vscode/
+.idea/
+
+# Archivos de dependencias
+node_modules/
+venv/
+.venv/
+__pycache__/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de compilación
+*.class
+*.o
+*.exe
+
+# ignorar a todo lo que este en la carpeta datasets
+datasets/

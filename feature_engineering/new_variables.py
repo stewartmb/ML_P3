@@ -5,35 +5,6 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 import matplotlib.pyplot as plt
 
-def create_pobreza(df, pobreza_reducido):
-    """
-    Agrega features de pobreza al DataFrame de estudiantes
-    basado en la información del DataFrame de pobreza reducido.
-    """
-
-    # Merge solo del porcentaje de pobreza por RESIDENCIA
-    df = df.merge(
-        pobreza_reducido[['Departamento', 'Provincia', 'Distrito', 'Porcentaje de Pobreza']],
-        left_on=['DEPARTAMENTO_RES', 'PROVINCIA_RES', 'DISTRITO_RES'],
-        right_on=['Departamento', 'Provincia', 'Distrito'],
-        how='left'
-    ).rename(columns={'Porcentaje de Pobreza': 'POBREZA_RES'})
-
-    # Eliminamos columnas duplicadas del merge (Departamento, Provincia, Distrito)
-    df = df.drop(columns=['Departamento', 'Provincia', 'Distrito'])
-
-    # Merge solo del porcentaje de pobreza por PROCEDENCIA
-    df = df.merge(
-        pobreza_reducido[['Departamento', 'Provincia', 'Distrito', 'Porcentaje de Pobreza']],
-        left_on=['DEPARTAMENTO_PRO', 'PROVINCIA_PRO', 'DISTRITO_PRO'],
-        right_on=['Departamento', 'Provincia', 'Distrito'],
-        how='left'
-    ).rename(columns={'Porcentaje de Pobreza': 'POBREZA_PRO'})
-
-    # Eliminamos nuevamente las columnas auxiliares
-    df = df.drop(columns=['Departamento', 'Provincia', 'Distrito'])
-
-    return df
 
 def generate_map_cluster(df_clean):
     """

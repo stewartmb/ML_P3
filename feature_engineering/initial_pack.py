@@ -58,12 +58,6 @@ def normalizar_dataset(df_original):
         'PTJE_INGRESO',         # Puntaje ingreso
         'FECHA_NACIMIENTO',     # Fecha de nacimiento
         'BECA_VIGENTE',         # Beca vigente
-        'DEPARTAMENTO_PRO',     # Departamento de procedencia
-        'PROVINCIA_PRO',        # Provincia de procedencia
-        'DISTRITO_PRO',         # Distrito de procedencia
-        'DEPARTAMENTO_RES',     # Departamento de residencia
-        'PROVINCIA_RES',        # Provincia de residencia
-        'DISTRITO_RES',         # Distrito de residencia
         'CONTRASENIA'           # Contraseña
     ]
     
